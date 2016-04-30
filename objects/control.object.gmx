@@ -44,6 +44,7 @@ for(i=0;i&lt;numPlayers;i++)
     currPlayer.numUnits=0
     newPlayer.num = i+1
 }
+instance_create(360,64,view)
 instance_create(704,64,view) //top right view
 //top left view (384,64)
 //bottom right view (704,416)

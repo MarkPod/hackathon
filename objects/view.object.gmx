@@ -27,8 +27,17 @@
             <kind>1</kind>
             <string>num=control.numViews
 control.numViews++
-dim1=0
-dim2=1
+
+randomize()
+dim1=floor(random(4))
+randomize()
+dim2=dim1+floor(random(4))
+
+//remove later
+if control.numViews&gt;0
+dim1=2
+dim2=4
+
 offset1=0
 offset2=0
 size=8
@@ -91,16 +100,17 @@ gridBgTimer = 0
             <string>a=0
 numSelected=0
 if mouse_x&gt;=x &amp;&amp; mouse_y&gt;=y
-&amp;&amp; mouse_x&lt;=x+8*size &amp;&amp; mouse_y&lt;= y+8*size
-    a=1
-for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
+&amp;&amp; mouse_x&lt;=x+32*size &amp;&amp; mouse_y&lt;= y+32*size
 {
-    control.players[control.turn-1].units[i].selected=0
-    if floor((mouse_x-x)/32) = control.players[control.turn-1].units[i].coordinates[dim1]
-    &amp;&amp; floor((mouse_y-y)/32) = control.players[control.turn-1].units[i].coordinates[dim2]
+    for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
     {
-        numSelected++
-        control.players[control.turn-1].units[i].selected=numSelected
+        control.players[control.turn-1].units[i].selected=0
+        if floor((mouse_x-x)/32) = control.players[control.turn-1].units[i].coordinates[dim1]-offset1
+        &amp;&amp; floor((mouse_y-y)/32) = control.players[control.turn-1].units[i].coordinates[dim2]-offset2
+        {
+            numSelected++
+            control.players[control.turn-1].units[i].selected=numSelected
+        }
     }
 }
 </string>
@@ -152,7 +162,7 @@ for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>drawAxisBg("A","B")
+            <string>drawAxisBg("X","p")
 
 draw_set_colour(0)
 draw_rectangle(x,y,x+32*size,y+32*size,true)
@@ -170,18 +180,15 @@ for(i=0;i&lt;size;i++)
 for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
 {
     currUnit = control.players[control.turn-1].units[i]
-    //for(ii=0;ii&lt;control.numDimensions;ii++)
-    {
-        //if control.players[control.turn-1].units[i].coordinates[ii]&gt;=offset1
-            //draw_sprite(sprite4,0,  x+(control.players[control.turn-1].units[i].coordinates[ii]-offset1+16)*32,y)
-        //if control.players[control.turn-1].units[i].coordinates[ii]
-    }
+    
     if currUnit.coordinates[dim1]&gt;=offset1
     &amp;&amp; currUnit.coordinates[dim1]&lt; offset1+size
     &amp;&amp; currUnit.coordinates[dim2]&gt;=offset2
     &amp;&amp; currUnit.coordinates[dim2]&lt; offset2+size
         draw_sprite(sprite4,0,x+(currUnit.coordinates[dim1]-offset1)*32+16,y+(currUnit.coordinates[dim2]-offset2)*32+16)
 }
+draw_text(x-20,y-20,dim1)
+draw_text(x-20,y-40,dim2)
 </string>
           </argument>
         </arguments>
