@@ -28,7 +28,7 @@
             <string>num=control.numViews
 control.numViews++
 dim1=0
-dim2=0
+dim2=1
 offset1=0
 offset2=0
 size=8

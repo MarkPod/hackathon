@@ -89,7 +89,9 @@ else
     numUnits++
     for(i=0;i&lt;control.numDimensions;i++)
     {
-        newUnit.coordinates[i]=0
+        randomize()
+        newUnit.coordinates[i]=floor(-8+random(16))
+        
     }
 }
 </string>
