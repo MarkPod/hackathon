@@ -13,6 +13,7 @@
     <sprite>sprites\sprite2</sprite>
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
+    <sprite>sprites\uiArrowButton</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
