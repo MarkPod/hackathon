@@ -35,6 +35,10 @@ offset2=0
 currPlayer=control.currPlayer
 
 a=0
+
+//surface drawing
+gridBg = surface_create(128,128)
+gridBgTimer = 0
 </string>
           </argument>
         </arguments>
@@ -103,8 +107,10 @@ a=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_colour(0)
-draw_rectangle(x,y,x+room_width/4,y+room_height/4,false)
+            <string>drawAxisBg("A","B")
+
+draw_set_colour(0)
+draw_rectangle(x,y,x+room_width/4,y+room_height/4,true)
 draw_set_colour(16777215)
 for(i=0;i&lt;8;i++)
 {
