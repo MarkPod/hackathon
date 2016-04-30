@@ -4,7 +4,7 @@
 
 //argument0 = horizontal axis
 //argument1 = vertical axis
-var gridSize,axisSpread,hOffset,starSpread,starRand;
+var gridSize,axisSpread,hOffset,starSpread,starRand,starColour;
 gridSize = size*32
 axisSpread = 24 //how far apart to place letters (the font height is 12)
 hOffset = 8 //how far to offset the vertical letters
@@ -22,7 +22,7 @@ if surface_exists(gridBg)
         
         //stars background with axis as seed
         
-        setColorAxis(argument0)
+        starColour = setColorAxis(argument0)
         for (i = 0; i <= 128; i += 1)
             {
                 for (j = 0; j <= 128; j += 1)
@@ -30,12 +30,22 @@ if surface_exists(gridBg)
                         starRand = random(starSpread)
                         if (starRand <= 1)
                             {
-                                draw_set_alpha(starRand)
-                                draw_point(i,j)
+                                if starRand > 0.98
+                                    {
+                                        draw_sprite_ext(star0,0,i,j,1,1,1,starColour,starRand)
+                                    }else if starRand > 0.1
+                                    {
+                                        draw_set_alpha(starRand)
+                                        draw_point(i,j)
+                                    } else
+                                    {
+                                        draw_sprite_ext(nebula,0,i,j,1,1,1,starColour,starRand*2)
+                                    }
+                                
                             }
                     }
             }
-        setColorAxis(argument1)
+        starColour = setColorAxis(argument1)
         for (i = 0; i <= 128; i += 1)
             {
                 for (j = 0; j <= 128; j += 1)
@@ -43,8 +53,17 @@ if surface_exists(gridBg)
                         starRand = random(starSpread)
                         if (starRand <= 1)
                             {
-                                draw_set_alpha(starRand)
-                                draw_point(i,j)
+                                if starRand > 0.98
+                                    {
+                                        draw_sprite_ext(star0,0,i,j,1,1,1,starColour,starRand)
+                                    }else if starRand > 0.1
+                                    {
+                                        draw_set_alpha(starRand)
+                                        draw_point(i,j)
+                                    } else
+                                    {
+                                        draw_sprite_ext(nebula,0,i,j,1,1,1,starColour,starRand*2)
+                                    }
                             }
                     }
             }
@@ -52,7 +71,7 @@ if surface_exists(gridBg)
         //draw arg0 and arg1 as strings
         //make them tile and scroll
         draw_set_font(bgFont)
-        draw_set_alpha(0.1)
+        draw_set_alpha(0.2)
         
         
         gridBgTimer += 0.5
