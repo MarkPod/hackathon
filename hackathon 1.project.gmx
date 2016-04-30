@@ -13,6 +13,14 @@
     <sprite>sprites\sprite2</sprite>
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
+<<<<<<< .merge_file_a11840
+=======
+    <sprite>sprites\uiArrowButton</sprite>
+    <sprite>sprites\star0</sprite>
+    <sprite>sprites\nebula</sprite>
+=======
+>>>>>>> f569b67fecdd5812a73b678cce64f034a18ebe39
+>>>>>>> .merge_file_a08944
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
