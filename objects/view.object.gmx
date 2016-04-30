@@ -36,6 +36,7 @@ size=8
 currPlayer=control.currPlayer
 
 a=0
+numSelected=0
 
 //surface drawing
 gridBg = surface_create(128,128)
@@ -88,9 +89,20 @@ gridBgTimer = 0
           <argument>
             <kind>1</kind>
             <string>a=0
+numSelected=0
 if mouse_x&gt;=x &amp;&amp; mouse_y&gt;=y
 &amp;&amp; mouse_x&lt;=x+8*size &amp;&amp; mouse_y&lt;= y+8*size
     a=1
+for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
+{
+    control.players[control.turn-1].units[i].selected=0
+    if floor((mouse_x-x)/32) = control.players[control.turn-1].units[i].coordinates[dim1]
+    &amp;&amp; floor((mouse_y-y)/32) = control.players[control.turn-1].units[i].coordinates[dim2]
+    {
+        numSelected++
+        control.players[control.turn-1].units[i].selected=numSelected
+    }
+}
 </string>
           </argument>
         </arguments>
