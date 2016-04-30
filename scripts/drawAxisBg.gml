@@ -4,18 +4,13 @@
 
 //argument0 = horizontal axis
 //argument1 = vertical axis
-//argument2 = surface id (pref the id of the grid view or whatever idk)
-var gridSize,axisSpread,hOffset,col1,col2;
+var gridSize,axisSpread,hOffset,starSpread,starRand;
 gridSize = size*32
 axisSpread = 24 //how far apart to place letters (the font height is 12)
 hOffset = 8 //how far to offset the vertical letters
 
-//set colours as set seed based on
-random_set_seed(ord(argument0))
-col1 = random(16777215)
-
-random_set_seed(ord(argument1))
-col2 = random(16777215)
+//star stuff
+starSpread = 400
 
 if surface_exists(gridBg)
     {
@@ -24,15 +19,46 @@ if surface_exists(gridBg)
         //black background
         draw_set_colour(0)
         draw_rectangle(0,0,128,128,false)
+        
+        //stars background with axis as seed
+        
+        setColorAxis(argument0)
+        for (i = 0; i <= 128; i += 1)
+            {
+                for (j = 0; j <= 128; j += 1)
+                    {
+                        starRand = random(starSpread)
+                        if (starRand <= 1)
+                            {
+                                draw_set_alpha(starRand)
+                                draw_point(i,j)
+                            }
+                    }
+            }
+        setColorAxis(argument1)
+        for (i = 0; i <= 128; i += 1)
+            {
+                for (j = 0; j <= 128; j += 1)
+                    {
+                        starRand = random(starSpread)
+                        if (starRand <= 1)
+                            {
+                                draw_set_alpha(starRand)
+                                draw_point(i,j)
+                            }
+                    }
+            }
+        
         //draw arg0 and arg1 as strings
         //make them tile and scroll
         draw_set_font(bgFont)
-        draw_set_alpha(0.5)
+        draw_set_alpha(0.1)
+        
         
         gridBgTimer += 0.5
         gridBgTimer = gridBgTimer mod axisSpread
         
-        draw_set_colour(col1)
+        setColorAxis(argument0)
         for (i = (gridBgTimer)-axisSpread; i < 128; i += axisSpread) //scrolling axis
             {
                 for (j = hOffset; j < 128; j += axisSpread * string_length(argument0)) //non scrolling
@@ -41,7 +67,7 @@ if surface_exists(gridBg)
                     }
             }
         
-        draw_set_colour(col2)
+        setColorAxis(argument1)
         for (i = (gridBgTimer * string_length(argument1))-axisSpread; i < 128; i += axisSpread * string_length(argument1)) //scrolling axis
             {
                 for (j = hOffset; j < 128; j += axisSpread) //non scrolling
@@ -59,10 +85,10 @@ if surface_exists(gridBg)
         
         //draw coloured sidebars on axis
         //vertical axis
-        draw_set_colour(col1)
+        setColorAxis(argument0)
         draw_rectangle(x-32,y,x,y+gridSize,false)
         //horizontal axis
-        draw_set_colour(col2)
+        setColorAxis(argument1)
         draw_rectangle(x,y-32,x+gridSize,y,false)
         
     }else
