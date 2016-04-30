@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>numDimensions=2//number of dimensions
 numViews=1//number of views
-dimensionSize=16
 
 numPlayers=2
 players[]=0
@@ -44,7 +43,9 @@ for(i=0;i&lt;numPlayers;i++)
     currPlayer.numUnits=0
     newPlayer.num = i+1
 }
-instance_create(40,40,view)
+instance_create(704,64,view) //top right view
+//top left view (384,64)
+//bottom right view (704,416)
 </string>
           </argument>
         </arguments>

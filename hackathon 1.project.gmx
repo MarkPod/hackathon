@@ -16,6 +16,13 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\setColorAxis.gml</script>
+    <script>scripts\drawAxisBg.gml</script>
+  </scripts>
+  <fonts name="fonts">
+    <font>fonts\bgFont</font>
+  </fonts>
   <objects name="objects">
     <object>objects\view</object>
     <object>objects\player</object>
