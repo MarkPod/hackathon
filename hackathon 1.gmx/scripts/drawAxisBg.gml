@@ -35,14 +35,14 @@ if surface_exists(gridBg)
         draw_set_colour(col1)
         for (i = (gridBgTimer)-axisSpread; i < 128; i += axisSpread) //scrolling axis
             {
-                for (j = hOffset; j < 128; j += axisSpread) //non scrolling
+                for (j = hOffset; j < 128; j += axisSpread * string_length(argument0)) //non scrolling
                     {
                         draw_text(j,i,argument0)
                     }
             }
         
         draw_set_colour(col2)
-        for (i = (gridBgTimer)-axisSpread; i < 128; i += axisSpread) //scrolling axis
+        for (i = (gridBgTimer * string_length(argument1))-axisSpread; i < 128; i += axisSpread * string_length(argument1)) //scrolling axis
             {
                 for (j = hOffset; j < 128; j += axisSpread) //non scrolling
                     {
@@ -56,6 +56,14 @@ if surface_exists(gridBg)
         surface_reset_target()
         //draw surface behind grid
         draw_surface_ext(gridBg,x,y,(gridSize)/128,(gridSize)/128,0,c_white,1)
+        
+        //draw coloured sidebars on axis
+        //vertical axis
+        draw_set_colour(col1)
+        draw_rectangle(x-32,y,x,y+gridSize,false)
+        //horizontal axis
+        draw_set_colour(col2)
+        draw_rectangle(x,y-32,x+gridSize,y,false)
         
     }else
         {
