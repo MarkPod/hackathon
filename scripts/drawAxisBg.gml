@@ -5,11 +5,17 @@
 //argument0 = horizontal axis
 //argument1 = vertical axis
 //argument2 = surface id (pref the id of the grid view or whatever idk)
-var gridSize,axisSpread,hOffset;
-gridSize = 8*32
+var gridSize,axisSpread,hOffset,col1,col2;
+gridSize = size*32
 axisSpread = 24 //how far apart to place letters (the font height is 12)
 hOffset = 8 //how far to offset the vertical letters
 
+//set colours as set seed based on
+random_set_seed(ord(argument0))
+col1 = random(16777215)
+
+random_set_seed(ord(argument1))
+col2 = random(16777215)
 
 if surface_exists(gridBg)
     {
@@ -26,7 +32,7 @@ if surface_exists(gridBg)
         gridBgTimer += 0.5
         gridBgTimer = gridBgTimer mod axisSpread
         
-        setColorAxis(argument0)
+        draw_set_colour(col1)
         for (i = (gridBgTimer)-axisSpread; i < 128; i += axisSpread) //scrolling axis
             {
                 for (j = hOffset; j < 128; j += axisSpread * string_length(argument0)) //non scrolling
@@ -35,7 +41,7 @@ if surface_exists(gridBg)
                     }
             }
         
-        setColorAxis(argument1)
+        draw_set_colour(col2)
         for (i = (gridBgTimer * string_length(argument1))-axisSpread; i < 128; i += axisSpread * string_length(argument1)) //scrolling axis
             {
                 for (j = hOffset; j < 128; j += axisSpread) //non scrolling
@@ -53,10 +59,10 @@ if surface_exists(gridBg)
         
         //draw coloured sidebars on axis
         //vertical axis
-        setColorAxis(argument0)
+        draw_set_colour(col1)
         draw_rectangle(x-32,y,x,y+gridSize,false)
         //horizontal axis
-        setColorAxis(argument1)
+        draw_set_colour(col2)
         draw_rectangle(x,y-32,x+gridSize,y,false)
         
     }else
