@@ -16,6 +16,9 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\drawAxisBg.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\view</object>
     <object>objects\player</object>
