@@ -6,7 +6,7 @@
 //argument1 = vertical axis
 //argument2 = surface id (pref the id of the grid view or whatever idk)
 var gridSize,axisSpread,hOffset,col1,col2;
-gridSize = 8*32
+gridSize = size*32
 axisSpread = 24 //how far apart to place letters (the font height is 12)
 hOffset = 8 //how far to offset the vertical letters
 

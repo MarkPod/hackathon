@@ -31,6 +31,7 @@ dim1=0
 dim2=0
 offset1=0
 offset2=0
+size=8
 
 currPlayer=control.currPlayer
 
@@ -110,27 +111,149 @@ gridBgTimer = 0
             <string>drawAxisBg("A","B")
 
 draw_set_colour(0)
-draw_rectangle(x,y,x+room_width/4,y+room_height/4,true)
+draw_rectangle(x,y,x+32*size,y+32*size,true)
 draw_set_colour(16777215)
-for(i=0;i&lt;8;i++)
+for(i=0;i&lt;size;i++)
 {
-    draw_line(x+i*32,y,x+i*32,y+room_height/4)
+    draw_line(x+i*32,y,x+i*32,y+size*32)
     draw_text(x+8+32*i,y-20,offset1+i)
 }
-for(i=0;i&lt;8;i++)
+for(i=0;i&lt;size;i++)
 {
-    draw_line(x,y+i*32,x+room_width/4,y+i*32)
-    draw_text(x-20,y+8+32*i,offset1+i)
+    draw_line(x,y+i*32,x+size*32,y+i*32)
+    draw_text(x-20,y+8+32*i,offset2+i)
 }
 for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
 {
     for(ii=0;ii&lt;control.numDimensions;ii++)
     {
-        if control.players[control.turn-1].units[i].coordinates[ii]&gt;=offset1
-            draw_sprite(sprite4,0,  x+(control.players[control.turn-1].units[i].coordinates[ii]-offset1+16)*32,
-                                    y)
+        //if control.players[control.turn-1].units[i].coordinates[ii]&gt;=offset1
+            //draw_sprite(sprite4,0,  x+(control.players[control.turn-1].units[i].coordinates[ii]-offset1+16)*32,y)
+        
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="65">
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>-1</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>size</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>1</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="40">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if offset2&lt;ceil(control.mapSize/2)-control.mapSize/2
+    offset2++
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="39">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if offset1&lt;ceil(control.mapSize/2)-control.mapSize/2
+    offset1++
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="38">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if offset2&gt;-ceil(control.mapSize/2)
+    offset2--
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="37">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if offset1&gt;-ceil(control.mapSize/2)
+    offset1--
 </string>
           </argument>
         </arguments>

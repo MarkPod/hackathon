@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>numDimensions=2//number of dimensions
 numViews=1//number of views
+mapSize=16
 
 numPlayers=2
 players[]=0
