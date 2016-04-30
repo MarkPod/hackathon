@@ -13,9 +13,12 @@
     <sprite>sprites\sprite2</sprite>
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
+<<<<<<< HEAD
     <sprite>sprites\uiArrowButton</sprite>
     <sprite>sprites\star0</sprite>
     <sprite>sprites\nebula</sprite>
+=======
+>>>>>>> f569b67fecdd5812a73b678cce64f034a18ebe39
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
