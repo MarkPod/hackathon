@@ -83,7 +83,7 @@ else
             <kind>1</kind>
             <string>if a=1
 {
-    newUnit = instance_create(random(room_width),random(room_height),unit)
+    newUnit = instance_create(40,40*numUnits*32,unit)
     newUnit.num=numUnits
     units[numUnits]=newUnit
     numUnits++

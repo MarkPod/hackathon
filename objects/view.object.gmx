@@ -28,15 +28,8 @@
             <string>num=control.numViews
 control.numViews++
 
-randomize()
-dim1=floor(random(4))
-randomize()
-dim2=dim1+floor(random(4))
-
-//remove later
-if control.numViews&gt;0
-dim1=2
-dim2=4
+dim1=ceil(random_range(2,9))
+dim2=1
 
 offset1=0
 offset2=0
@@ -72,10 +65,7 @@ gridBgTimer = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if mouse_x&gt;=x &amp;&amp; mouse_y&gt;=y
-&amp;&amp; mouse_x&lt;=x+8*size &amp;&amp; mouse_y&lt;= y+8*size
-    a=1
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -135,12 +125,7 @@ if mouse_x&gt;=x &amp;&amp; mouse_y&gt;=y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if a=1
-{
-    x=mouse_x-size/2*32
-    y=mouse_y-size/2*32
-}
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -190,6 +175,32 @@ for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
 draw_text(x-20,y-20,dim1)
 draw_text(x-20,y-40,dim2)
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="81">
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>-1</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>dim1</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>1</string>
           </argument>
         </arguments>
       </action>

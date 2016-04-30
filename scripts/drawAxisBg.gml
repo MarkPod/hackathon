@@ -1,6 +1,6 @@
 //draw scrolling names of axis vertically and horizontally
 
-//im gonna try to draw this shit to a surface
+//im gonna try to draw this to a surface
 
 //argument0 = horizontal axis
 //argument1 = vertical axis
