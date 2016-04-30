@@ -120,9 +120,9 @@ for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
 {
     for(ii=0;ii&lt;control.numDimensions;ii++)
     {
-        if control.players[control.turn-1].units[i].coordinates[ii]&gt;=offset1
-            draw_sprite(sprite4,0,  x+(control.players[control.turn-1].units[i].coordinates[ii]+16)*32,
-                                    y)
+        //if control.players[control.turn-1].units[i].coordinates[ii]&gt;=offset1
+            //draw_sprite(sprite4,0,  x+(control.players[control.turn-1].units[i].coordinates[ii]+16)*32,y)
+        
     }
 }
 </string>
