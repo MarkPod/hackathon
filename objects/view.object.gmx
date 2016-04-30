@@ -121,7 +121,7 @@ for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
     for(ii=0;ii&lt;control.numDimensions;ii++)
     {
         if control.players[control.turn-1].units[i].coordinates[ii]&gt;=offset1
-            draw_sprite(sprite4,0,  x+(control.players[control.turn-1].units[i].coordinates[ii]-offset1+16)*32,
+            draw_sprite(sprite4,0,  x+(control.players[control.turn-1].units[i].coordinates[ii]+16)*32,
                                     y)
     }
 }
@@ -147,7 +147,8 @@ for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>offset2++
+            <string>if offset2+8&lt;ceil(control.dimensionSize/2)
+offset2++
 </string>
           </argument>
         </arguments>
@@ -170,7 +171,8 @@ for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>offset1++
+            <string>if offset1+8&lt;ceil(control.dimensionSize/2)
+offset1++
 </string>
           </argument>
         </arguments>
@@ -193,7 +195,8 @@ for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>offset2--
+            <string>if offset2&gt;-ceil(control.dimensionSize/2)
+offset2--
 </string>
           </argument>
         </arguments>
@@ -216,7 +219,8 @@ for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>offset1--
+            <string>if offset1&gt;-ceil(control.dimensionSize/2)
+offset1--
 </string>
           </argument>
         </arguments>
