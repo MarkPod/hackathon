@@ -81,6 +81,7 @@ if mouse_x&gt;=x &amp;&amp; mouse_y&gt;=y
         }
     }
 }
+checkButtonPress()
 </string>
           </argument>
         </arguments>
@@ -104,6 +105,7 @@ if mouse_x&gt;=x &amp;&amp; mouse_y&gt;=y
           <argument>
             <kind>1</kind>
             <string>drawAxisBg("X","p")
+drawButtons()
 
 draw_set_colour(0)
 draw_rectangle(x,y,x+32*size,y+32*size,true)

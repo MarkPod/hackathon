@@ -7,6 +7,8 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sprite9</sprite>
+    <sprite>sprites\sprite15</sprite>
+    <sprite>sprites\sprite16</sprite>
     <sprite>sprites\sprite10</sprite>
     <sprite>sprites\sprite11</sprite>
     <sprite>sprites\sprite12</sprite>
