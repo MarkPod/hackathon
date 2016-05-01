@@ -47,8 +47,7 @@ gridBgTimer = 0
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="6" enumb="56">
+<<<<<<< HEAD
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -65,10 +64,14 @@ gridBgTimer = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>off1Button = instance_create(x,y,off1Up)
+off1Button.myView=self
+</string>
           </argument>
         </arguments>
       </action>
+=======
+>>>>>>> 3a59a8e4313899cf61d063fe67736b20fef52512
     </event>
     <event eventtype="6" enumb="53">
       <action>
@@ -108,8 +111,7 @@ if mouse_x&gt;=x &amp;&amp; mouse_y&gt;=y
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="6" enumb="50">
+<<<<<<< HEAD
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -126,10 +128,40 @@ if mouse_x&gt;=x &amp;&amp; mouse_y&gt;=y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>//offset1 up
+if mouse_x&gt;x+size*32-32 &amp;&amp; mouse_x&lt;x+size*32
+&amp;&amp; mouse_y&gt;y+size*32 &amp;&amp; mouse_y&lt;y+size*32+32
+{
+    if offset1&lt;ceil(control.mapSize/2)-control.mapSize/2
+        offset1++
+}
+//offest1 down
+if mouse_x&gt;x &amp;&amp; mouse_x&lt;x+32
+&amp;&amp; mouse_y&gt;y+size*32 &amp;&amp; mouse_y&lt;y+size*32+32
+{
+    if offset1&gt;-ceil(control.mapSize/2)
+        offset1--
+}
+//offset2 up
+if mouse_x&gt;x+size*32 &amp;&amp; mouse_x&lt;x+size*32+32
+&amp;&amp; mouse_y&gt;y &amp;&amp; mouse_y&lt;y+32
+{
+    if offset2&gt;-ceil(control.mapSize/2)
+        offset2--
+}
+//offest2 down
+if mouse_x&gt;x+size*32 &amp;&amp; mouse_x&lt;x+size*32+32
+&amp;&amp; mouse_y&gt;y+size*32-32 &amp;&amp; mouse_y&lt;y+size*32
+{
+    if offset2&lt;ceil(control.mapSize/2)-control.mapSize/2
+        offset2++
+}
+</string>
           </argument>
         </arguments>
       </action>
+=======
+>>>>>>> 3a59a8e4313899cf61d063fe67736b20fef52512
     </event>
     <event eventtype="8" enumb="0">
       <action>
@@ -176,6 +208,65 @@ for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
 }
 draw_text(x-20,y-20,dim1)
 draw_text(x-20,y-40,dim2)
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+<<<<<<< HEAD
+            <string>///draw selected unit info on side
+//control.numDimensions -1 is total dimensions
+//control.players[control.turn-1].units[i].selected
+var lineWidth,lineY,lineX,lineDivide,currUnit,currDim;
+lineWidth = 64
+lineDivide = 16
+
+
+
+for (i = 0; i &lt; array_length_1d(control.players[control.turn-1].units) ; i++)
+    {
+        currUnit = control.players[control.turn-1].units[i]
+        if currUnit.selected &gt; 0
+            {
+                for (j=0;j &lt; control.numDimensions -1; j++)
+                    {
+                        currDim = currUnit.coordinates[j]
+                        
+                        lineY = 128+(lineDivide*j) 
+                        lineX = (32)+((currUnit.selected-1)*lineWidth)
+                        
+                        setColorAxis(j)
+                        draw_text(lineX-16,lineY-8,string(j))
+                        draw_line(lineX,lineY,lineX+lineWidth-2,lineY)
+                        draw_circle(lineX + (((currDim+8)/16)*lineWidth),lineY,4,false)
+                    }
+            }
+        
+    }
+//draw_line(32,128 +(32*i),32+lineWidth,128)
+//draw_circle(32+i,128 +(32*i),16,false)
+//setColorAxis(string(i))
+=======
+            <string>draw_sprite(sprite9,0,x+size*32-16,y+size*32+16)
+draw_sprite(sprite10,0,x+16,y+size*32+16)
+draw_sprite(sprite11,0,x+size*32+16,y+16)
+draw_sprite(sprite12,0,x+size*32+16,y+size*32-16)
+>>>>>>> 447d4369c83e9e238b43f2fea2574fca5fd8f509
 </string>
           </argument>
         </arguments>
