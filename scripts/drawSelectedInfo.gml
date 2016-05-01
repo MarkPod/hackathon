@@ -15,13 +15,23 @@ for (i = 0; i < array_length_1d(control.players[control.turn-1].units) ; i++)
                 for (j=0;j < control.numDimensions -1; j++)
                     {
                         currDim = currUnit.coordinates[j]
+                        currU = currUnit.selected-1
                         
                         lineY = 128+(lineDivide*j) 
-                        lineX = (32)+((currUnit.selected-1)*lineWidth)
+                        lineX = (32)+((currU)*lineWidth)+(currU * 7)
                         
                         setColorAxis(j)
-                        draw_text(lineX-16,lineY-8,string(j))
-                        draw_line(lineX,lineY,lineX+lineWidth-2,lineY)
+                        
+                        if (currU = 0)
+                            {
+                               draw_text(lineX-16,lineY-8,string(j)) 
+                            }
+                        
+                        draw_line(lineX,lineY,lineX+lineWidth,lineY)//h line
+                        //notches
+                        draw_line(lineX,lineY,lineX,lineY-lineDivide)//left
+                        draw_line(lineX+(lineWidth/2),lineY,lineX+(lineWidth/2),lineY-lineDivide)//mid
+                        draw_line(lineX+lineWidth,lineY,lineX+lineWidth,lineY-lineDivide)//right
                         draw_circle(lineX + (((currDim+8)/16)*lineWidth),lineY,4,false)
                     }
             }
