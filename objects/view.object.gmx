@@ -104,7 +104,7 @@ checkButtonPress()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>drawAxisBg("X","p")
+            <string>drawAxisBg(dim1,dim2)
 drawButtons()
 
 draw_set_colour(0)

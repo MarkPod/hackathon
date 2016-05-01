@@ -80,14 +80,14 @@ if surface_exists(gridBg)
         setColorAxis(argument0)
         for (i = (gridBgTimer)-axisSpread; i < 128; i += axisSpread) //scrolling axis
             {
-                for (j = hOffset; j < 128; j += axisSpread * string_length(argument0)) //non scrolling
+                for (j = hOffset; j < 128; j += axisSpread) //non scrolling
                     {
                         draw_text(j,i,argument0)
                     }
             }
         
         setColorAxis(argument1)
-        for (i = (gridBgTimer * string_length(argument1))-axisSpread; i < 128; i += axisSpread * string_length(argument1)) //scrolling axis
+        for (i = (gridBgTimer)-axisSpread; i < 128; i += axisSpread) //scrolling axis
             {
                 for (j = hOffset; j < 128; j += axisSpread) //non scrolling
                     {
