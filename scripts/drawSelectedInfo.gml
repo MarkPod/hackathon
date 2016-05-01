@@ -11,9 +11,12 @@ for (i = 0; i < array_length_1d(control.players[control.turn-1].units) ; i++)
     {
         currUnit = control.players[control.turn-1].units[i]
         if currUnit.activated==1
+        {
             activeUnit=currUnit
-        //if currUnit.selected > 0 
-        //&& currUnit.selected >= unitOffset+1 && currUnit.selected <= unitOffset+3
+            control.activeUnit=currUnit
+        }
+
+        
         {
         //if currUnit.selected > 0 && currUnit.selected >= unitOffset+1 && currUnit.selected <= unitOffset+3
         

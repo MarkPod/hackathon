@@ -5,6 +5,7 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
+    <sound>sound\sound1</sound>
     <sound>sound\bg_1</sound>
   </sounds>
   <sprites name="sprites">

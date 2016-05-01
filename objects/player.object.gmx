@@ -25,11 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>units[]=0
+            <string>for(i=0;i&lt;control.numPlayers;i++)
+    units[i]=0
 numUnits=0
 for(i=0;i&lt;control.mapSize-2;i++)
 {
-    
+    newUnit = instance_create(40,40*numUnits*32,unit)
+    newUnit.num=numUnits
+    units[numUnits]=newUnit
+    numUnits++
+    for(ii=0;ii&lt;control.numDimensions;ii++)
+        newUnit.coordinates[ii] = i+ii
 }
 </string>
           </argument>
@@ -86,6 +92,7 @@ else
             <kind>1</kind>
             <string>no=0
 if a=1
+&amp;&amp; num = control.turn
 {
     newUnit = instance_create(40,40*numUnits*32,unit)
     newUnit.num=numUnits
@@ -95,8 +102,8 @@ if a=1
     {
         randomize()
         newUnit.coordinates[i]=floor(-8+random(16))
-       
     }
+    newUnit.team = num
 }
 </string>
           </argument>
@@ -122,11 +129,7 @@ if a=1
             <kind>1</kind>
             <string>if a=1
 {
-    control.numDimensions++
-    for(i=0;i&lt;numUnits;i++)
-    {
-        units[i].coordinates[control.numDimensions-1]=0
-    }
+    
 }
 </string>
           </argument>
