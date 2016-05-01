@@ -249,14 +249,21 @@ for(i=0;i&lt;16;i++)
           <argument>
             <kind>1</kind>
             <string>///stats
+var xOffset;
+xOffset = 250
+
+//rectangle background
+draw_set_colour(0)
+draw_rectangle(x-30,y-18,x+290,y+80,false)
+
 draw_set_font(bgFont)
 draw_set_colour(make_colour_hsv(random(255),125,255))
 draw_text(x,y-12, "number of players: ")
-draw_text(x+400,y-8, control.numPlayers)
+draw_text(x+xOffset,y-8, control.numPlayers)
 draw_text(x,y+22, "number of dimensions: ")
-draw_text(x+400,y+24, control.numDimensions)
+draw_text(x+xOffset,y+24, control.numDimensions)
 draw_text(x,y+52, "size of map: ")
-draw_text(x+400,y+52, control.mapSize)
+draw_text(x+xOffset,y+52, control.mapSize)
 </string>
           </argument>
         </arguments>

@@ -12,9 +12,15 @@ for (i = 0; i < array_length_1d(control.players[control.turn-1].units) ; i++)
         currUnit = control.players[control.turn-1].units[i]
         if currUnit.activated==1
             activeUnit=currUnit
+<<<<<<< HEAD
         if currUnit.selected > 0 
         && currUnit.selected >= unitOffset+1 && currUnit.selected <= unitOffset+3
         {
+=======
+        //if currUnit.selected > 0 && currUnit.selected >= unitOffset+1 && currUnit.selected <= unitOffset+3
+        
+        
+>>>>>>> cd22753160bedcbc832119d4552b19e37bcee30e
         currU = currUnit.selected-1
 
         lineX = (32)+((currU - (unitOffset))*lineWidth)+((currU - (unitOffset))* 7)
