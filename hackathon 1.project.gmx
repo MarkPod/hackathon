@@ -25,11 +25,11 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\drawSelectedInfo.gml</script>
     <script>scripts\checkButtonPress.gml</script>
     <script>scripts\drawButtons.gml</script>
     <script>scripts\setColorAxis.gml</script>
     <script>scripts\drawAxisBg.gml</script>
-    <script>scripts\drawSelectedInfo.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\bgFont</font>
@@ -39,6 +39,12 @@
       <object>objects\selectionButton</object>
       <object>objects\off1Up</object>
       <object>objects\off1Down</object>
+    </objects>
+    <objects name="start menu buttons">
+      <object>objects\numPlayersUp</object>
+      <object>objects\numDimensionsUp</object>
+      <object>objects\numPlayersDown</object>
+      <object>objects\numDimensionsDown</object>
     </objects>
     <object>objects\view</object>
     <object>objects\player</object>
