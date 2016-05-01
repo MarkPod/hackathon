@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -28,11 +28,13 @@
             <string>num=control.numViews
 control.numViews++
 
-dim1=ceil(random_range(2,9))
-dim2=1
+dim1=floor(random(control.numDimensions))
+dim2=floor(random(control.numDimensions))
 
 offset1=0
 offset2=0
+unitOffset=0
+
 size=8
 
 currPlayer=control.currPlayer
@@ -65,11 +67,13 @@ gridBgTimer = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>a=0
-numSelected=0
+            <string>numSelected=0
 if mouse_x&gt;=x &amp;&amp; mouse_y&gt;=y
 &amp;&amp; mouse_x&lt;=x+32*size &amp;&amp; mouse_y&lt;= y+32*size
 {
+    view.a=0
+    a=1//select
+    checkButtonPressOffset()
     for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
     {
         control.players[control.turn-1].units[i].selected=0
@@ -82,6 +86,12 @@ if mouse_x&gt;=x &amp;&amp; mouse_y&gt;=y
     }
 }
 checkButtonPress()
+checkButtonPressDim()
+if a=1
+{
+    checkButtonPressOffset()
+    unitSelect()
+}
 </string>
           </argument>
         </arguments>
@@ -129,13 +139,18 @@ for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
     &amp;&amp; currUnit.coordinates[dim1]&lt; offset1+size
     &amp;&amp; currUnit.coordinates[dim2]&gt;=offset2
     &amp;&amp; currUnit.coordinates[dim2]&lt; offset2+size
-        draw_sprite(sprite4,0,x+(currUnit.coordinates[dim1]-offset1)*32+16,y+(currUnit.coordinates[dim2]-offset2)*32+16)
+        draw_sprite_ext(sprite4,currUnit.type,  x+(currUnit.coordinates[dim1]-offset1)*32+16,
+                                                y+(currUnit.coordinates[dim2]-offset2)*32+16,
+                                                1,1,0,make_colour_hsv(255*(currUnit.team/control.numPlayers),175,255),1)
 }
-draw_text(x-20,y-20,dim1)
-draw_text(x-20,y-40,dim2)
+//draw dims
+draw_text(x+size*16-8,y+size*32+6,dim2)
+draw_text(x+size*32+10,y+size*16,dim1)
 
 //puts extra script here thxxxxx
 drawSelectedInfo()
+if a=1
+    drawButtonsOffset()
 </string>
           </argument>
         </arguments>

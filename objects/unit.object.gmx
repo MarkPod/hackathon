@@ -31,6 +31,11 @@ maxMove=5
 moveLeft=maxMove
 selected=0//selected from view along with other units
 active=0//selected from list of selected units, ready to act
+
+randomize()
+type=floor(random(5))//type will also refer to the frame for the image
+randomize()
+team=1+floor(random(control.numPlayers))
 </string>
           </argument>
         </arguments>

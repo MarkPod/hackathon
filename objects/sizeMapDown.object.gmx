@@ -48,8 +48,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if control.numPlayers &gt; 1
-    control.numPlayers--
+            <string>if control.mapSize&gt;0
+    control.mapSize--
 </string>
           </argument>
         </arguments>
