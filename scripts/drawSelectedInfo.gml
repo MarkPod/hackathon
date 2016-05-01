@@ -32,7 +32,8 @@ for (i = 0; i < array_length_1d(control.players[control.turn-1].units) ; i++)
                         draw_line(lineX,lineY,lineX,lineY-lineDivide)//left
                         draw_line(lineX+(lineWidth/2),lineY,lineX+(lineWidth/2),lineY-lineDivide)//mid
                         draw_line(lineX+lineWidth,lineY,lineX+lineWidth,lineY-lineDivide)//right
-                        draw_circle(lineX + (((currDim+8)/16)*lineWidth),lineY,4,false)
+                        //draw_circle(lineX + (((currDim+8)/16)*lineWidth),lineY,4,false)
+                        draw_text(lineX + (((currDim+8)/16)*lineWidth),lineY,string(currDim))
                     }
             }
         

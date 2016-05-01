@@ -4,7 +4,7 @@
 
 //argument0 = horizontal axis
 //argument1 = vertical axis
-var gridSize,axisSpread,hOffset,starSpread,starRand,starColour;
+var gridSize,axisSpread,hOffset,starSpread,starRand,starColour,colRect;
 gridSize = size*32
 axisSpread = 24 //how far apart to place letters (the font height is 12)
 hOffset = 8 //how far to offset the vertical letters
@@ -103,12 +103,44 @@ if surface_exists(gridBg)
         draw_surface_ext(gridBg,x,y,(gridSize)/128,(gridSize)/128,0,c_white,1)
         
         //draw coloured sidebars on axis
-        //vertical axis
-        setColorAxis(argument0)
+        colRect = setColorAxis(argument0)
+        colRect = make_colour_hsv(colour_get_hue(colRect),255,128)
+        draw_set_colour(colRect)
+        
         draw_rectangle(x-32,y,x,y+gridSize,false)
         //horizontal axis
-        setColorAxis(argument1)
+        colRect = setColorAxis(argument1)
+        colRect = make_colour_hsv(colour_get_hue(colRect),255,128)
+        draw_set_colour(colRect)
+        
         draw_rectangle(x,y-32,x+gridSize,y,false)
+        
+        //draw decorative tiles around view
+        //corners
+        draw_sprite(viewBorderTile,0,x-32,y-32) //top left
+        draw_sprite(viewBorderTile,0,x+(gridSize),y-32) //top right
+        draw_sprite(viewBorderTile,0,x-32,y+(gridSize)) //bottom left
+        draw_sprite(viewBorderTile,0,x+(gridSize),y+(gridSize)) //bottom right
+        
+        //coloured border
+        for (i=0;i <= size-1;i++)
+            {
+                draw_sprite(viewBorderTile,1,x+(i*32),y-32)//top
+            }
+        for (i=0;i <= size-1;i++)
+            {
+                draw_sprite_ext(viewBorderTile,1,x-32,y+(i*32)+32,1,1,90,c_white,1)//left
+            }
+        //button back
+        for (i=0;i <= size-1;i++)
+            {
+                draw_sprite(viewBorderTile,1,x+(i*32),y+gridSize)//bottom
+            }
+        for (i=0;i <= size-1;i++)
+            {
+                draw_sprite_ext(viewBorderTile,1,x+gridSize,y+(i*32)+32,1,1,90,c_white,1)//right
+            }
+        //dimension number display
         
     }else
         {
