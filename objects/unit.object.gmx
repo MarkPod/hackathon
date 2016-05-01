@@ -77,15 +77,13 @@ active=0//selected from list of selected units, ready to act
           <argument>
             <kind>1</kind>
             <string>draw_self()
+for(i=0;i&lt;control.numDimensions;i++)
+{
+    draw_text(x+20,y+20*i,coordinates[i])
+}
 
 if selected&gt;0
-{
     draw_text(x+20,20*selected,num)
-    for(i=0;i&lt;control.numDimensions;i++)
-    {
-        draw_text(x+20*i,y+20,coordinates[i])
-    }
-}
 </string>
           </argument>
         </arguments>

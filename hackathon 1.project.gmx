@@ -6,10 +6,6 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sprite9</sprite>
-    <sprite>sprites\sprite10</sprite>
-    <sprite>sprites\sprite11</sprite>
-    <sprite>sprites\sprite12</sprite>
     <sprite>sprites\nebula</sprite>
     <sprite>sprites\star0</sprite>
     <sprite>sprites\sprite6</sprite>
@@ -23,8 +19,6 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\checkButtonPress.gml</script>
-    <script>scripts\drawButtons.gml</script>
     <script>scripts\setColorAxis.gml</script>
     <script>scripts\drawAxisBg.gml</script>
   </scripts>
@@ -32,11 +26,6 @@
     <font>fonts\bgFont</font>
   </fonts>
   <objects name="objects">
-    <objects name="view buttons">
-      <object>objects\selectionButton</object>
-      <object>objects\off1Up</object>
-      <object>objects\off1Down</object>
-    </objects>
     <object>objects\view</object>
     <object>objects\player</object>
     <object>objects\unit</object>

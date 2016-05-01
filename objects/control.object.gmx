@@ -2,7 +2,7 @@
 <object>
   <spriteName>sprite0</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -44,8 +44,8 @@ for(i=0;i&lt;numPlayers;i++)
     currPlayer.numUnits=0
     newPlayer.num = i+1
 }
-instance_create(360,96,view)
-instance_create(704,96,view) //top right view
+instance_create(360,64,view)
+instance_create(704,64,view) //top right view
 //top left view (384,64)
 //bottom right view (704,416)
 </string>
