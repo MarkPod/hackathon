@@ -10,19 +10,16 @@ lineDivide = 16
 for (i = 0; i < array_length_1d(control.players[control.turn-1].units) ; i++)
     {
         currUnit = control.players[control.turn-1].units[i]
-<<<<<<< HEAD
         if currUnit.activated==1
             activeUnit=currUnit
-        if currUnit.selected > 0 
-        && currUnit.selected >= unitOffset+1 && currUnit.selected <= unitOffset+3
-=======
+        //if currUnit.selected > 0 && currUnit.selected >= unitOffset+1 && currUnit.selected <= unitOffset+3
+        
         
         currU = currUnit.selected-1
 
         lineX = (32)+((currU - (unitOffset))*lineWidth)+((currU - (unitOffset))* 7)
         //currUnit.selected > 0 && 
         if (currUnit.selected >= unitOffset+1 and currUnit.selected <= unitOffset+3)
->>>>>>> eded045f63b76c05853c1124ba6fc6bd1fc8e46d
             {
                 draw_set_colour(0)
                 draw_rectangle(lineX,148,lineX+lineWidth,208+16*control.numDimensions,false) //black backing
