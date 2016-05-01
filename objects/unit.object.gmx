@@ -37,7 +37,7 @@ activated=0//selected from list of selected units, ready to act
 randomize()
 type=floor(random(5))//type will also refer to the frame for the image
 randomize()
-team=1+floor(random(control.numPlayers))
+//team=1+floor(random(control.numPlayers))
 
 control.totalUnits++
 unitOffset = 1
@@ -74,9 +74,6 @@ unitOffset = 1
         activated=1
         selected=2
         //control.activeView.activeUnit=self
-        goButton.y=544
-        for(i=0;i&lt;control.numDimensions;i++)
-            control.goCoordinates[i]=0
     }
 }
 if activated&gt;0
@@ -93,7 +90,9 @@ if activated&gt;0
     {
         control.goCoordinates[floor((mouse_y-208)/16)]+=1
     }
+    goButton.y=544
 }
+
 </string>
           </argument>
         </arguments>

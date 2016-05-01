@@ -25,14 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>checkSpace()
+            <string>if checkSpace() &gt;=0
 for(i=0;i&lt;control.numDimensions;i++)
 {
-    control.activeView.activeUnit.coordinates[i] = control.goCoordinates[i]
+    control.activeUnit.coordinates[i] = control.goCoordinates[i]
 }
+else
+    sound_play(sound1)
 
 unit.selected=0
 unit.activated=0
+
+for(i=0;i&lt;control.numDimensions;i++)
+    control.goCoordinates[i]=0
 </string>
           </argument>
         </arguments>
