@@ -37,6 +37,7 @@
     <background>background\background1</background>
     <background>background\background2</background>
     <background>background\background0</background>
+    <background>background\bgGrid</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
