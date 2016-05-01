@@ -44,13 +44,25 @@ for(i=0;i&lt;numPlayers;i++)
     currPlayer.numUnits=0
     newPlayer.num = i+1
 }
-instance_create(360,96,view)
-instance_create(704,96,view) //top right view
-//top left view (384,64)
-//bottom right view (704,416)
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="27">
+      <action>
+        <libid>1</libid>
+        <id>332</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_end_game</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
   </events>

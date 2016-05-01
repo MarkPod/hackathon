@@ -6,6 +6,7 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\sprite17</sprite>
     <sprite>sprites\sprite9</sprite>
     <sprite>sprites\sprite15</sprite>
     <sprite>sprites\sprite16</sprite>
@@ -41,6 +42,8 @@
       <object>objects\off1Down</object>
     </objects>
     <objects name="start menu buttons">
+      <object>objects\startButton</object>
+      <object>objects\startControl</object>
       <object>objects\numPlayersUp</object>
       <object>objects\numDimensionsUp</object>
       <object>objects\numPlayersDown</object>
@@ -53,6 +56,7 @@
     <object>objects\control</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\start_menu</room>
     <room>rooms\room0</room>
   </rooms>
   <help>
