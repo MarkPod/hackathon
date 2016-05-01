@@ -24,6 +24,7 @@
     <sprite>sprites\sprite2</sprite>
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
+    <sprite>sprites\viewBorderTile</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>

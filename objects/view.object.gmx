@@ -114,7 +114,7 @@ draw_set_colour(16777215)
 for(i=0;i&lt;size;i++)
 {
     draw_line(x+i*32,y,x+i*32,y+size*32)
-    draw_text(x+8+32*i,y-20,offset1+i)
+    draw_text(x+8+32*i,y-25,offset1+i)
 }
 for(i=0;i&lt;size;i++)
 {
