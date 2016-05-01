@@ -23,6 +23,8 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\checkButtonPress.gml</script>
+    <script>scripts\drawButtons.gml</script>
     <script>scripts\setColorAxis.gml</script>
     <script>scripts\drawAxisBg.gml</script>
   </scripts>

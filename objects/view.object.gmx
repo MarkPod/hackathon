@@ -47,28 +47,6 @@ gridBgTimer = 0
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>off1Button = instance_create(x,y,off1Up)
-off1Button.myView=self
-</string>
-          </argument>
-        </arguments>
-      </action>
     </event>
     <event eventtype="6" enumb="53">
       <action>
@@ -102,54 +80,6 @@ if mouse_x&gt;=x &amp;&amp; mouse_y&gt;=y
             control.players[control.turn-1].units[i].selected=numSelected
         }
     }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//offset1 up
-if mouse_x&gt;x+size*32-32 &amp;&amp; mouse_x&lt;x+size*32
-&amp;&amp; mouse_y&gt;y+size*32 &amp;&amp; mouse_y&lt;y+size*32+32
-{
-    if offset1&lt;ceil(control.mapSize/2)-control.mapSize/2
-        offset1++
-}
-//offest1 down
-if mouse_x&gt;x &amp;&amp; mouse_x&lt;x+32
-&amp;&amp; mouse_y&gt;y+size*32 &amp;&amp; mouse_y&lt;y+size*32+32
-{
-    if offset1&gt;-ceil(control.mapSize/2)
-        offset1--
-}
-//offset2 up
-if mouse_x&gt;x+size*32 &amp;&amp; mouse_x&lt;x+size*32+32
-&amp;&amp; mouse_y&gt;y &amp;&amp; mouse_y&lt;y+32
-{
-    if offset2&gt;-ceil(control.mapSize/2)
-        offset2--
-}
-//offest2 down
-if mouse_x&gt;x+size*32 &amp;&amp; mouse_x&lt;x+size*32+32
-&amp;&amp; mouse_y&gt;y+size*32-32 &amp;&amp; mouse_y&lt;y+size*32
-{
-    if offset2&lt;ceil(control.mapSize/2)-control.mapSize/2
-        offset2++
 }
 </string>
           </argument>
@@ -200,30 +130,6 @@ for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
 }
 draw_text(x-20,y-20,dim1)
 draw_text(x-20,y-40,dim2)
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_sprite(sprite9,0,x+size*32-16,y+size*32+16)
-draw_sprite(sprite10,0,x+16,y+size*32+16)
-draw_sprite(sprite11,0,x+size*32+16,y+16)
-draw_sprite(sprite12,0,x+size*32+16,y+size*32-16)
 </string>
           </argument>
         </arguments>
