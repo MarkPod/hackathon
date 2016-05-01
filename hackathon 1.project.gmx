@@ -21,6 +21,9 @@
   <scripts name="scripts">
     <script>scripts\setColorAxis.gml</script>
     <script>scripts\drawAxisBg.gml</script>
+    <scripts name="view draw">
+      <script>scripts\view_draw_selectInfo.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\bgFont</font>
