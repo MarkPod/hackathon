@@ -104,7 +104,8 @@ checkButtonPress()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>drawAxisBg(dim1,dim2)
+            <string>///put new scripts at bottom of here plsss
+drawAxisBg(dim1,dim2)
 drawButtons()
 
 draw_set_colour(0)
@@ -132,6 +133,9 @@ for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
 }
 draw_text(x-20,y-20,dim1)
 draw_text(x-20,y-40,dim2)
+
+//puts extra script here thxxxxx
+drawSelectedInfo()
 </string>
           </argument>
         </arguments>

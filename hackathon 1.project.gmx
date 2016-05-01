@@ -29,6 +29,7 @@
     <script>scripts\drawButtons.gml</script>
     <script>scripts\setColorAxis.gml</script>
     <script>scripts\drawAxisBg.gml</script>
+    <script>scripts\drawSelectedInfo.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\bgFont</font>
