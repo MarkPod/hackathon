@@ -6,6 +6,8 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\sprite18</sprite>
+    <sprite>sprites\subtitle</sprite>
     <sprite>sprites\sprite17</sprite>
     <sprite>sprites\sprite9</sprite>
     <sprite>sprites\sprite15</sprite>
@@ -23,7 +25,10 @@
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background1</background>
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\drawSelectedInfo.gml</script>
@@ -42,6 +47,7 @@
       <object>objects\off1Down</object>
     </objects>
     <objects name="start menu buttons">
+      <object>objects\sub</object>
       <object>objects\startButton</object>
       <object>objects\startControl</object>
       <object>objects\numPlayersUp</object>
