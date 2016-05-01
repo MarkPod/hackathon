@@ -40,6 +40,8 @@ i=0
 totalUnits=0
 //make views
 
+goCoordinates[]=0
+
 </string>
           </argument>
         </arguments>

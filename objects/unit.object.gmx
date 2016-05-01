@@ -74,6 +74,24 @@ unitOffset = 1
         activated=1
         selected=2
         //control.activeView.activeUnit=self
+        goButton.y=544
+        for(i=0;i&lt;control.numDimensions;i++)
+            control.goCoordinates[i]=0
+    }
+}
+if activated&gt;0
+{
+    //down
+    if mouse_x&gt;=48 &amp;&amp; mouse_x&lt;=72
+    &amp;&amp; mouse_y&gt;=208 &amp;&amp; mouse_y&lt;208+16*control.numDimensions
+    {
+        control.goCoordinates[floor((mouse_y-208)/16)]-=1
+    }
+    //up
+    if mouse_x&gt;=184 &amp;&amp; mouse_x&lt;=224
+    &amp;&amp; mouse_y&gt;=208 &amp;&amp; mouse_y&lt;208+16*control.numDimensions
+    {
+        control.goCoordinates[floor((mouse_y-208)/16)]+=1
     }
 }
 </string>
@@ -135,7 +153,10 @@ if activated=1
 {
     //currUnit= self
     //drawSelectedInfo()
+    checkInput()
 }
+if hits=0
+    instance_destroy()
 </string>
           </argument>
         </arguments>

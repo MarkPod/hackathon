@@ -72,6 +72,7 @@ gridBgTimer = 0
 if mouse_x&gt;=x &amp;&amp; mouse_y&gt;=y
 &amp;&amp; mouse_x&lt;=x+32*size &amp;&amp; mouse_y&lt;= y+32*size
 {
+    goButton.y=1000
     unitOffset=0
     view.a=0
     a=1//select
@@ -124,11 +125,13 @@ drawButtons()
 draw_set_colour(0)
 draw_rectangle(x,y,x+32*size,y+32*size,true)
 draw_set_colour(16777215)
+//draw vertical lines
 for(i=0;i&lt;size;i++)
 {
     draw_line(x+i*32,y,x+i*32,y+size*32)
     draw_text(x+8+32*i,y-25,offset1+i)
 }
+//draw horizontal lines
 for(i=0;i&lt;size;i++)
 {
     draw_line(x,y+i*32,x+size*32,y+i*32)
@@ -157,6 +160,14 @@ draw_text(x+size*32+10,y+size*16,dim1)
 drawSelectedInfo()
 if a=1
     drawButtonsOffset()
+
+if activeUnit!=0
+{
+    if activeUnit.type=0
+    {
+        
+    }
+}
 </string>
           </argument>
         </arguments>
