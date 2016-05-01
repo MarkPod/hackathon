@@ -12,6 +12,7 @@
     <sprite>sprites\sprite18</sprite>
     <sprite>sprites\subtitle</sprite>
     <sprite>sprites\sprite17</sprite>
+    <sprite>sprites\endTurn</sprite>
     <sprite>sprites\sprite9</sprite>
     <sprite>sprites\sprite15</sprite>
     <sprite>sprites\sprite21</sprite>
@@ -39,16 +40,20 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\zeroDivisionResolution.gml</script>
     <script>scripts\makeViews.gml</script>
+    <scripts name="buttons">
+      <script>scripts\checkButtonPressOffset.gml</script>
+      <script>scripts\checkButtonPressDim.gml</script>
+      <script>scripts\checkButtonPress.gml</script>
+    </scripts>
     <script>scripts\drawSelectedInfo.gml</script>
-    <script>scripts\checkButtonPress.gml</script>
-    <script>scripts\checkButtonPressOffset.gml</script>
-    <script>scripts\checkButtonPressDim.gml</script>
     <script>scripts\drawButtons.gml</script>
     <script>scripts\drawButtonsOffset.gml</script>
     <script>scripts\setColorAxis.gml</script>
     <script>scripts\unitSelect.gml</script>
     <script>scripts\drawAxisBg.gml</script>
+    <script>scripts\checkSpace.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\bgFont</font>
@@ -70,6 +75,7 @@
       <object>objects\sizeMapDown</object>
       <object>objects\sizeMapUp</object>
     </objects>
+    <object>objects\endTurnButton</object>
     <object>objects\view</object>
     <object>objects\player</object>
     <object>objects\unit</object>

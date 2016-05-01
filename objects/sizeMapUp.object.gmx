@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>control.mapSize++
+            <string>control.mapSize+=2
 </string>
           </argument>
         </arguments>

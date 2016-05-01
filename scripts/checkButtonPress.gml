@@ -2,7 +2,7 @@
 if mouse_x>x+size*32-32 && mouse_x<x+size*32
 && mouse_y>y+size*32 && mouse_y<y+size*32+32
 {
-    if offset1<ceil(control.mapSize/2)-control.mapSize/2
+    if offset1<ceil(control.mapSize/2)-8
         offset1++
 }
 //offest1 down
@@ -23,6 +23,6 @@ if mouse_x>x+size*32 && mouse_x<x+size*32+32
 if mouse_x>x+size*32 && mouse_x<x+size*32+32
 && mouse_y>y+size*32-32 && mouse_y<y+size*32
 {
-    if offset2<ceil(control.mapSize/2)-control.mapSize/2
+    if offset2<ceil(control.mapSize/2)-8
         offset2++
 }

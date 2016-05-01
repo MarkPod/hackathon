@@ -38,6 +38,7 @@ unitOffset=0
 size=8
 
 currPlayer=control.currPlayer
+activeUnit=0
 
 a=0
 numSelected=0
@@ -71,6 +72,7 @@ gridBgTimer = 0
 if mouse_x&gt;=x &amp;&amp; mouse_y&gt;=y
 &amp;&amp; mouse_x&lt;=x+32*size &amp;&amp; mouse_y&lt;= y+32*size
 {
+    unitOffset=0
     view.a=0
     a=1//select
     checkButtonPressOffset()
@@ -83,6 +85,7 @@ if mouse_x&gt;=x &amp;&amp; mouse_y&gt;=y
             numSelected++
             control.players[control.turn-1].units[i].selected=numSelected
         }
+        control.activeView=self
     }
 }
 checkButtonPress()
@@ -90,7 +93,7 @@ checkButtonPressDim()
 if a=1
 {
     checkButtonPressOffset()
-    unitSelect()
+    //unitSelect()
 }
 </string>
           </argument>
@@ -131,17 +134,20 @@ for(i=0;i&lt;size;i++)
     draw_line(x,y+i*32,x+size*32,y+i*32)
     draw_text(x-20,y+8+32*i,offset2+i)
 }
-for(i=0;i&lt;control.players[control.turn-1].numUnits;i++)
-{
-    currUnit = control.players[control.turn-1].units[i]
-    
-    if currUnit.coordinates[dim1]&gt;=offset1
-    &amp;&amp; currUnit.coordinates[dim1]&lt; offset1+size
-    &amp;&amp; currUnit.coordinates[dim2]&gt;=offset2
-    &amp;&amp; currUnit.coordinates[dim2]&lt; offset2+size
-        draw_sprite_ext(sprite4,currUnit.type,  x+(currUnit.coordinates[dim1]-offset1)*32+16,
-                                                y+(currUnit.coordinates[dim2]-offset2)*32+16,
-                                                1,1,0,make_colour_hsv(255*(currUnit.team/control.numPlayers),175,255),1)
+for(i=0;i&lt;control.numPlayers;i++)
+    {
+    for(ii=0;ii&lt;control.players[i].numUnits;ii++)
+        {
+            currUnit = control.players[i].units[ii]
+            
+            if currUnit.coordinates[dim1]&gt;=offset1
+            &amp;&amp; currUnit.coordinates[dim1]&lt; offset1+size
+            &amp;&amp; currUnit.coordinates[dim2]&gt;=offset2
+            &amp;&amp; currUnit.coordinates[dim2]&lt; offset2+size
+                draw_sprite_ext(sprite4,currUnit.type,  x+(currUnit.coordinates[dim1]-offset1)*32+16,
+                                                        y+(currUnit.coordinates[dim2]-offset2)*32+16,
+                                                        1,1,0,make_colour_hsv(255*(currUnit.team/control.numPlayers),175,255),1)
+    }
 }
 //draw dims
 draw_text(x+size*16-8,y+size*32+6,dim2)

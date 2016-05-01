@@ -49,7 +49,7 @@
           <argument>
             <kind>1</kind>
             <string>if control.mapSize&gt;0
-    control.mapSize--
+    control.mapSize-=2
 </string>
           </argument>
         </arguments>

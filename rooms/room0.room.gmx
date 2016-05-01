@@ -52,6 +52,7 @@
   </views>
   <instances>
     <instance objName="control" x="64" y="96" name="inst_26C00409" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="endTurnButton" x="128" y="640" name="inst_9A0D76ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

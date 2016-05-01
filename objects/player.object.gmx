@@ -27,7 +27,10 @@
             <kind>1</kind>
             <string>units[]=0
 numUnits=0
-
+for(i=0;i&lt;control.mapSize-2;i++)
+{
+    
+}
 </string>
           </argument>
         </arguments>
@@ -81,7 +84,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if a=1
+            <string>no=0
+if a=1
 {
     newUnit = instance_create(40,40*numUnits*32,unit)
     newUnit.num=numUnits
@@ -91,7 +95,7 @@ else
     {
         randomize()
         newUnit.coordinates[i]=floor(-8+random(16))
-        
+       
     }
 }
 </string>
