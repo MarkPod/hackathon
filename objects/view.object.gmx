@@ -74,6 +74,7 @@ if mouse_x&gt;=x &amp;&amp; mouse_y&gt;=y
 {
     goButton.y=1000
     unitOffset=0
+    control.activeUnit=0
     view.a=0
     a=1//select
     checkButtonPressOffset()

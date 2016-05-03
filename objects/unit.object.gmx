@@ -29,7 +29,7 @@
 
 hits=5
 maxMove=5
-moveLeft=maxMove
+m=maxMove
 
 selected=0//selected from view along with other units
 activated=0//selected from list of selected units, ready to act
@@ -70,7 +70,8 @@ unitOffset = 1
     &amp;&amp; mouse_y&gt;160 &amp;&amp; mouse_y&lt;192
     {
         unit.selected=0
-        unit.activated=0
+        if control.activeUnit!=0
+            control.activeUnit.activated=0
         activated=1
         selected=2
         //control.activeView.activeUnit=self
@@ -156,6 +157,8 @@ if activated=1
 }
 if hits=0
     instance_destroy()
+    
+//draw_text(40,40,m)
 </string>
           </argument>
         </arguments>

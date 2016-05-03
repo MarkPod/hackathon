@@ -32,6 +32,9 @@ else
 unit.selected=0
 unit.activated=0
 goButton.y=1000
+
+for(i=0;i&lt;control.numDimensions;i++)
+    control.goCoordinates[i]=0
 </string>
           </argument>
         </arguments>
@@ -54,11 +57,14 @@ goButton.y=1000
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self()
-draw_set_colour(make_colour_hsv(255*(control.turn/control.numPlayers),175,255))
-draw_text(60,room_height-80, "player ")
-draw_text(114,room_height-80, control.turn)
-draw_text(121+floor(control.turn/10)*8,room_height-80, "'s turn")
+            <string>
+draw_set_colour(0)
+draw_rectangle(x-64,y+32,x+64,y+128,false)
+draw_set_colour(make_colour_hsv(255*(control.turn/control.numPlayers),255,255))
+draw_text(64,room_height-80, "player ")
+draw_text(118,room_height-80, control.turn)
+draw_text(125+floor(control.turn/10)*8,room_height-80, "'s turn")
+draw_self()
 </string>
           </argument>
         </arguments>

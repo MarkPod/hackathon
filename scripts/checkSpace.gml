@@ -11,14 +11,14 @@ for(i=0;i<control.numPlayers;i++)
                 i=control.numPlayers-1
                 no=-1
             }
-            if control.players[i].units[ii].coordinates[iii] = control.goCoordinates[iii]
+            if control.players[i].units[ii].coordinates[iii] = control.activeUnit.coordinates[iii]+control.goCoordinates[iii]
                 no++
         }
      }
 }
 if no = control.numDimensions
 {
-    control.players[i].units[ii].h=0
+    control.players[i].units[ii].hits=0
 }
 return no
 

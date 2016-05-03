@@ -13,16 +13,13 @@ for (i = 0; i < array_length_1d(control.players[control.turn-1].units) ; i++)
         if currUnit.activated==1
         {
             activeUnit=currUnit
-<<<<<<< HEAD
             control.activeUnit=currUnit
         }
 
         if currUnit.selected > 0 
         && currUnit.selected >= unitOffset+1 && currUnit.selected <= unitOffset+3
-=======
         //if currUnit.selected > 0 
         //&& currUnit.selected >= unitOffset+1 && currUnit.selected <= unitOffset+3
->>>>>>> c880acdefb47d07a57e81b82044cb0f3fe510ede
         {
         //if currUnit.selected > 0 && currUnit.selected >= unitOffset+1 && currUnit.selected <= unitOffset+3
         
